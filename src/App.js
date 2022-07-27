@@ -17,7 +17,7 @@ const nftContractInterface = [
   "function safeTransferFrom(address from, address to, uint256 tokenId) external returns (bool)"
 ];
 
-Moralis.start({ serverUrl: "https://dhbkvqagvjis.usemoralis.com:2053/server", appId: "bvVqpsUuDmGBnVhwsy1VFhQNLZYcfw99VSBvBmM0" });
+Moralis.start({ serverUrl: "https://qk85cyghezlu.usemoralis.com:2053/server", appId: "MNVar88ttASG86QkGPsBrvrVOoQaG4jp2yYf29lC" });
 
 const App = () => {
   const [provider, setProvider] = useState(null);
