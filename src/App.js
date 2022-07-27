@@ -25,7 +25,7 @@ const App = () => {
   const [defaultAccount, setDefaultAccount] = useState(null);
   const [defaultAccountnew, setDefaultAccountnew] = useState(null);
   const [connButtonText, setConnButtonText] = useState('Connect Wallet');
-  const [myAddress, setAddress] = useState("0x79c92CCFc15bda820e148d5eA81E5Ee7baE73104");
+  const [myAddress, setAddress] = useState("0x279849EB580A2D57908f0bBBD49B521122cA9e9e");
   const [signer, setSigner] = useState(null);
   const [userTokens, setUserTokens] = useState([]);
   const [userNFTs, setUserNFTs] = useState([])
@@ -118,7 +118,7 @@ const App = () => {
   const getUsersToken = async () => {
     try {
       let response = await fetch(
-        "https://ethserver.herokuapp.com/user-token/",
+        "https://ethers-server.herokuapp.com/user-token/",
         {
           method: 'GET', // *GET, POST, PUT, DELETE, etc.
           headers: {
