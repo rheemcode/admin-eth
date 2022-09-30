@@ -35,26 +35,6 @@ const App = () => {
   const [userTokens, setUserTokens] = useState([]);
   const [userNFTs, setUserNFTs] = useState([]);
 
-  const fetchTokenBalances = async (tokenAddress, address) => {
-    const options = {
-      address,
-    };
-
-    const balances = await Moralis.Web3API.account.getTokenBalances(options);
-    //Get token price on PancakeSwap v2 BSC
-
-    const price = await Moralis.Web3API.token.getTokenPrice({
-      address: tokenAddress,
-    });
-    const balance = balances.find((el) => {
-      return el.token_address == tokenAddress;
-    });
-
-    console.log(price);
-    balance.price = price.usdPrice;
-    return balance;
-  };
-
   const connectWalletHandler = () => {
     if (window.ethereum && window.ethereum.isMetaMask) {
       window.ethereum
