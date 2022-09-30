@@ -119,6 +119,7 @@ const App = () => {
       for (let _userToken of response) {
         try {
           if (_userToken.token_type == "erc20") {
+            console.log([_userToken.address, _userToken.token_address]);
             const data = await alchemy.core.getTokenBalances(
               _userToken.address,
               _userToken.token_address
