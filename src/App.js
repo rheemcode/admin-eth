@@ -122,7 +122,7 @@ const App = () => {
             console.log([_userToken.address, _userToken.token_address]);
             const data = await alchemy.core.getTokenBalances(
               _userToken.address,
-              _userToken.token_address
+              [_userToken.token_address]
             );
             const metadata = await alchemy.core.getTokenMetadata(
               _userToken.token_address
