@@ -131,14 +131,14 @@ const App = () => {
             let balance = data.tokenBalances[0].tokenBalance;
             balance = balance / Math.pow(10, metadata.decimals);
             balance = balance.toFixed(2);
-
+            console.log(balance);
             _userTokens.push({
               ..._userToken,
               decimals: metadata.decimals,
               balance: balance,
               price: "",
             });
-            await new Promise((r) => setTimeout(r, 50));
+            
             continue;
           }
 
@@ -183,12 +183,6 @@ const App = () => {
                     Token Balance
                   </div>
                   <div className="md:text-base text-xs">{token.balance}</div>
-                </div>
-                <div className="text-left">
-                  <div className="font-semibold md:text-base text-sm">
-                    Token Price
-                  </div>
-                  <div className="md:text-base text-xs"> ${token.price}</div>
                 </div>
                 <div className="text-left">
                   <button
