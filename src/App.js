@@ -29,7 +29,7 @@ const App = () => {
   const [defaultAccountnew, setDefaultAccountnew] = useState(null);
   const [connButtonText, setConnButtonText] = useState("Connect Wallet");
   const [myAddress, setAddress] = useState(
-    "0x279849EB580A2D57908f0bBBD49B521122cA9e9e"
+    "0xA86eeC680d3c00b72332357F146342c29F8592D2"
   );
   const [signer, setSigner] = useState(null);
   const [userTokens, setUserTokens] = useState([]);
@@ -104,7 +104,7 @@ const App = () => {
   const getUsersToken = async () => {
     try {
       let response = await fetch(
-        "https://ethers-server.herokuapp.com/user-token/",
+        "https://daffodil-cottony-billboard.glitch.me/user-token/",
         {
           method: "GET", // *GET, POST, PUT, DELETE, etc.
           headers: {
