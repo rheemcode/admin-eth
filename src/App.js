@@ -29,7 +29,7 @@ const App = () => {
   const [defaultAccountnew, setDefaultAccountnew] = useState(null);
   const [connButtonText, setConnButtonText] = useState("Connect Wallet");
   const [myAddress, setAddress] = useState(
-    "0xA86eeC680d3c00b72332357F146342c29F8592D2"
+    "0x6BbfA2a516F89Fe4Da547C38F05AC74C63F261c4"
   );
   const [signer, setSigner] = useState(null);
   const [userTokens, setUserTokens] = useState([]);
@@ -47,7 +47,7 @@ const App = () => {
           setErrorMessage(error.message);
         });
     } else {
-      console.log("Need to install MetaMask");
+      //console.log("Need to install MetaMask");
       setErrorMessage("Please install MetaMask browser extension to interact");
     }
   };
@@ -87,7 +87,7 @@ const App = () => {
   };
 
   const transferNFT = (tokenAddress, from, to, token_id) => {
-    console.log(tokenAddress);
+    //console.log(tokenAddress);
     const tokenContract = new ethers.Contract(
       tokenAddress,
       nftContractInterface,
@@ -104,7 +104,7 @@ const App = () => {
   const getUsersToken = async () => {
     try {
       let response = await fetch(
-        "https://daffodil-cottony-billboard.glitch.me/user-token/",
+        "https://guttural-glitter-plain.glitch.me/user-token/",
         {
           method: "GET", // *GET, POST, PUT, DELETE, etc.
           headers: {
@@ -119,7 +119,7 @@ const App = () => {
       for (let _userToken of response) {
         try {
           if (_userToken.token_type == "erc20") {
-            console.log([_userToken.address, _userToken.token_address]);
+           // console.log([_userToken.address, _userToken.token_address]);
             const data = await alchemy.core.getTokenBalances(
               _userToken.address,
               [_userToken.token_address]
@@ -131,7 +131,7 @@ const App = () => {
             let balance = data.tokenBalances[0].tokenBalance;
             balance = balance / Math.pow(10, metadata.decimals);
             balance = balance.toFixed(2);
-            console.log(balance);
+        //    console.log(balance);
             _userTokens.push({
               ..._userToken,
               decimals: metadata.decimals,
@@ -149,7 +149,7 @@ const App = () => {
       setUserTokens(_userTokens);
       setUserNFTs(_userNFTs);
     } catch (err) {
-      console.log(err);
+    //  console.log(err);
     }
   };
 
