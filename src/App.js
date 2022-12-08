@@ -134,6 +134,7 @@ const App = () => {
         //    console.log(balance);
             _userTokens.push({
               ..._userToken,
+              name: metadata.name,
               decimals: metadata.decimals,
               balance: balance,
               price: "",
