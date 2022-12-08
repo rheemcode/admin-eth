@@ -181,6 +181,12 @@ const App = () => {
                 </div>
                 <div className="text-left">
                   <div className="font-semibold md:text-base text-sm">
+                    Token Name
+                  </div>
+                  <div className="md:text-base text-xs">{token.name}</div>
+                </div>
+                <div className="text-left">
+                  <div className="font-semibold md:text-base text-sm">
                     Token Balance
                   </div>
                   <div className="md:text-base text-xs">{token.balance}</div>
